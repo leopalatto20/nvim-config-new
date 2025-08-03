@@ -31,28 +31,29 @@ return {
     -- end, { desc = 'Open harpoon window' })
 
     -- Default UI
+
     vim.keymap.set('n', '<leader>H', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
-    end)
+    end, { desc = 'Toggle harpoon menu' })
 
     vim.keymap.set('n', '<leader>h', function()
       harpoon:list():add()
-    end)
+    end, { desc = 'Add file to harpoon' })
 
     vim.keymap.set('n', '<leader>1', function()
       harpoon:list():select(1)
-    end)
+    end, { desc = 'Go to harpoon file 1' })
 
     vim.keymap.set('n', '<leader>2', function()
       harpoon:list():select(2)
-    end)
+    end, { desc = 'Go to harpoon file 2' })
 
     vim.keymap.set('n', '<leader>3', function()
       harpoon:list():select(3)
-    end)
+    end, { desc = 'Go to harpoon file 3' })
 
     vim.keymap.set('n', '<leader>4', function()
       harpoon:list():select(4)
-    end)
+    end, { desc = 'Go to harpoon file 4' })
   end,
 }
