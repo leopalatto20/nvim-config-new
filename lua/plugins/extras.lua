@@ -18,6 +18,13 @@ return {
     end,
   },
   {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
+  },
+  {
     -- Hints keybinds
     'folke/which-key.nvim',
     opts = {
@@ -34,5 +41,11 @@ return {
       --   },
       -- },
     },
+  },
+  {
+    'razak17/tailwind-fold.nvim',
+    opts = {},
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact', 'php', 'blade' },
   },
 }
