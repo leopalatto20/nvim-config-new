@@ -2,8 +2,6 @@ local opts = { noremap = true, silent = true }
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
-
 vim.keymap.set('n', 'x', '"_x', opts)
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
@@ -29,7 +27,10 @@ local builtin = require 'telescope.builtin'
 vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>tf', ':TailwindFoldToggle<CR>', opts)
 
 vim.keymap.set('n', '<leader>ft', ':TodoTelescope<CR>', opts)
+
+vim.keymap.set('n', '<leader>e', ':Oil<CR>', { desc = 'Open parent directory' })
 
 vim.cmd 'colorscheme catppuccin-mocha'
