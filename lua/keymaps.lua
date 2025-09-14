@@ -32,5 +32,4 @@ vim.keymap.set('n', '<leader>tf', ':TailwindFoldToggle<CR>', opts)
 vim.keymap.set('n', '<leader>ft', ':TodoTelescope<CR>', opts)
 
 vim.keymap.set('n', '<leader>e', ':Oil<CR>', { desc = 'Open parent directory' })
-
-vim.cmd 'colorscheme catppuccin-mocha'
+vim.keymap.set('n', '<leader>E', ':Neotree toggle<CR>', { desc = 'Toggle neotree' })

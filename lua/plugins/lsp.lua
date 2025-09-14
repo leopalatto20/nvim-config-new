@@ -63,6 +63,8 @@ return {
         -- Fuzzy find all the symbols in your current workspace
         --  Similar to document symbols, except searches over your whole project.
         map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+        -- Mostrar diagnósticos en una ventana flotante de la posición actual
+        map('<leader>k', vim.diagnostic.open_float, 'Mostrar [E]rror flotante')
 
         -- Rename the variable under your cursor
         --  Most Language Servers support renaming across files, etc.
@@ -208,6 +210,7 @@ return {
       -- texlab = {},
       ts_ls = {},
       clangd = {},
+      tinymist = { filetypes = { 'typst' } },
     }
 
     -- Ensure the servers and tools above are installed
