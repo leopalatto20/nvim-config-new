@@ -30,7 +30,8 @@ return { -- Autoformat
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      python = { 'pyright' },
+      cpp = { 'clang-format' },
+      python = { 'ruff' },
       javascript = { 'prettier' },
       typescript = { 'prettier' },
       typescriptreact = { 'prettier' },

@@ -33,3 +33,27 @@ vim.keymap.set('n', '<leader>ft', ':TodoTelescope<CR>', opts)
 
 vim.keymap.set('n', '<leader>e', ':Oil<CR>', { desc = 'Open parent directory' })
 vim.keymap.set('n', '<leader>E', ':Neotree toggle<CR>', { desc = 'Toggle neotree' })
+
+vim.keymap.set('n', '<leader>UC', ':Telescope colorscheme<CR>', { desc = 'Telescope colorscheme' })
+
+vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
+
+-- load the session for the current directory
+vim.keymap.set('n', '<leader>qs', function()
+  require('persistence').load()
+end)
+
+-- select a session to load
+vim.keymap.set('n', '<leader>qS', function()
+  require('persistence').select()
+end)
+
+-- load the last session
+vim.keymap.set('n', '<leader>ql', function()
+  require('persistence').load { last = true }
+end)
+
+-- stop Persistence => session won't be saved on exit
+vim.keymap.set('n', '<leader>qd', function()
+  require('persistence').stop()
+end)
