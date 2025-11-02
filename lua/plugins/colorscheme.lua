@@ -1,6 +1,6 @@
 return {
   { 'Shatur/neovim-ayu' },
-  { 'ellisonleao/gruvbox.nvim', priority = 1000 },
+  { 'EdenEast/nightfox.nvim' }, -- lazy
   {
     'ribru17/bamboo.nvim',
     lazy = false,

@@ -196,7 +196,6 @@ return {
       -- },
       ruff = {},
       jsonls = {},
-      sqlls = {},
       terraformls = {},
       yamlls = {},
       bashls = {},
@@ -211,6 +210,7 @@ return {
       ts_ls = {},
       clangd = {},
       tinymist = { filetypes = { 'typst' } },
+      jdtls = {},
     }
 
     -- Ensure the servers and tools above are installed

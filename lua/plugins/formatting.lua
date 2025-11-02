@@ -41,6 +41,7 @@ return { -- Autoformat
       json = { 'prettier' },
       yaml = { 'prettier' },
       markdown = { 'prettier' },
+      java = { 'clang-format' },
     },
   },
 }
