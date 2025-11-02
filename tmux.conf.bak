@@ -1,0 +1,56 @@
+### Terminal y comportamiento básico ###
+set -g default-terminal "tmux-256color"
+set -g terminal-overrides ",xterm-256color:RGB"
+set -g base-index 1
+setw -g pane-base-index 1
+set -g renumber-windows on
+
+set -g status-position top
+set -g status-justify absolute-centre
+set -g status-style "bg=default"
+set -g window-status-current-style "fg=blue bold"
+set -g status-right ""
+set -g status-left " #S |"
+set -g status-left-length 100
+
+### Keybindings ###
+unbind r
+bind r source-file ~/.tmux.conf
+
+set-option -g prefix C-a
+set-option -g prefix2 none
+
+
+bind R command-prompt -I "#S" "rename-session '%%'"
+
+### Renombrar ventana actual (C-a W)
+bind W command-prompt -I "#W" "rename-window '%%'"
+
+unbind v
+bind v copy-mode
+
+set -g mouse on
+set-window-option -g mode-keys vi
+
+bind-key x kill-session
+set -g detach-on-destroy off
+
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection
+
+bind-key "j" display-popup -E -w 40% "sesh connect \"$(
+ sesh list -i | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Pick a sesh' --height 50 --prompt='⚡'
+)\""
+
+bind -N "last-session (via sesh) " L run-shell "sesh last || tmux display-message -d 1000 'Only one session'"
+
+
+### Plugins ###
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+set -g @sessionx-bind 'o'
+
+### TPM ###
+run '~/.tmux/plugins/tpm/tpm'
+
