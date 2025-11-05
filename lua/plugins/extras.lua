@@ -1,5 +1,4 @@
 return {
-  { 'psliwka/termcolors.nvim' },
   {
     -- detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
