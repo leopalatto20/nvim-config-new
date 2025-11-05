@@ -42,6 +42,7 @@ return { -- Autoformat
       yaml = { 'prettier' },
       markdown = { 'prettier' },
       java = { 'clang-format' },
+      cs = { 'csharpier' },
     },
   },
 }

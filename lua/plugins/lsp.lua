@@ -211,6 +211,7 @@ return {
       clangd = {},
       tinymist = { filetypes = { 'typst' } },
       jdtls = {},
+      roslyn = {},
     }
 
     -- Ensure the servers and tools above are installed
